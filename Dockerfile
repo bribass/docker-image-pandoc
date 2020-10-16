@@ -6,10 +6,10 @@ RUN apt-get update \
         curl \
     && apt-get clean
 
-ENV PANDOC_VERSION 2.3.1
+ENV PANDOC_VERSION 2.11.0.2
 RUN cd /tmp \
-    && curl -OL https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pandoc-${PANDOC_VERSION}-linux.tar.gz \
-    && tar zxf pandoc-${PANDOC_VERSION}-linux.tar.gz \
+    && curl -OL https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pandoc-${PANDOC_VERSION}-linux-amd64.tar.gz \
+    && tar zxf pandoc-${PANDOC_VERSION}-linux-amd64.tar.gz \
     && for i in bin share/man; do mv pandoc-${PANDOC_VERSION}/$i/* /usr/local/$i; done \
     && rm -rf pandoc*
 
